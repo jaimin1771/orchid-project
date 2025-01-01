@@ -20,6 +20,8 @@ use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
+use App\Orchid\Screens\Examples\CreateUserScreen;
+use App\Orchid\Screens\Examples\EditUserScreen;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,5 +103,9 @@ Route::screen('/examples/layouts', ExampleLayoutsScreen::class)->name('platform.
 Route::screen('/examples/grid', ExampleGridScreen::class)->name('platform.example.grid');
 Route::screen('/examples/charts', ExampleChartsScreen::class)->name('platform.example.charts');
 Route::screen('/examples/user', ExampleCardsScreen::class)->name('platform.example.cards');
+Route::get('/create-user', CreateUserScreen::class)->name('create.user');
+
+// Route for editing a user
+Route::get('/edit-user/{id}', EditUserScreen::class)->name('edit.user');
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');
